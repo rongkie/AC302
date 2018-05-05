@@ -54,14 +54,14 @@ function create(){
 	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 	// Create the ground
-	var ground = platforms.create(0, 550, 'ground');
-	ground.scale.setTo(2, 2);
-	ground.body.immovable = true;
-	// Create the ledges
-	var ledge = platforms.create(400, 400, 'ground');
-	ledge.body.immovable = true;
-	ledge = platforms.create(-100, 250, 'ground');
-	ledge.body.immovable = true;
+	var ground = platforms.create(400, 550, 'ground');
+	// ground.scale.setTo(2, 2);
+	// ground.body.immovable = true;
+	// // Create the ledges
+	// var ledge = platforms.create(400, 400, 'ground');
+	// ledge.body.immovable = true;
+	// ledge = platforms.create(-100, 250, 'ground');
+	// ledge.body.immovable = true;
 
 	// //set text style
 	// var style = {font: "bold 32px Arial", fill: "#fff"}
