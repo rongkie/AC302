@@ -10,6 +10,41 @@ function preload(){
   game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function create(){
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	
@@ -28,19 +63,19 @@ function create(){
 	ledge = platforms.create(-100, 250, 'ground');
 	ledge.body.immovable = true;
 
-	//set text style
-	var style = {font: "bold 32px Arial", fill: "#fff"}
-	//positioning the score
-	scorelabel = game.add.text(300,560, "Score: ", style);
-	scoretext = game.add.text(420, 560, score,style);
-	scorelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
-	scoretext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
+	// //set text style
+	// var style = {font: "bold 32px Arial", fill: "#fff"}
+	// //positioning the score
+	// scorelabel = game.add.text(300,560, "Score: ", style);
+	// scoretext = game.add.text(420, 560, score,style);
+	// scorelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
+	// scoretext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 
-	//positioning the lives
-	lifelabel = game.add.text(10,5, "Lives: ", style);
-	lifetext = game.add.text(120,5, life,style);
-	lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
-	lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
+	// //positioning the lives
+	// lifelabel = game.add.text(10,5, "Lives: ", style);
+	// lifetext = game.add.text(120,5, life,style);
+	// lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
+	// lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 }
 
 function update(){
