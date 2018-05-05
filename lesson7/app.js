@@ -55,7 +55,7 @@ function create(){
 	platforms.enableBody = true;
 	// Create the ground
 	var ground = platforms.create(400, 550, 'ground');
-	// ground.scale.setTo(2, 2);
+	ground.scale.setTo(2, 2);
 	// ground.body.immovable = true;
 	// // Create the ledges
 	// var ledge = platforms.create(400, 400, 'ground');
