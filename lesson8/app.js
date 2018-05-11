@@ -76,12 +76,14 @@ function create(){
 	enemyOne.body.bounce.y = 0.2;
 	enemyOne.body.gravity.y = 500;
 
-	// Create starts
+	// Create stars
 	stars = game.add.physicsGroup();
 	// enables interactions with other objects (e.g. player)
 	stars.enableBody = true;
 	// We shall create 12 stars evenly spaced
 	for(var i = 0; i < 12; i++) {
+		// even spaced, 70 pixels apart
+		var star = stars.create(i * 70, 0, 'star');
 		star.body.gravity.y = 200;
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
