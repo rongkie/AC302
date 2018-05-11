@@ -87,10 +87,15 @@ function create(){
 		star.body.gravity.y = 200;
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
+
+	// Create keyboard entries (movement)
+	cursors = game.input.keyboard.createCursorKeys();
+
 }
 
 function update(){
-
+	// using the physics property, we set the collision between the platform and the sprites
+	game.physics.arcade.collide(player, platforms);
+	game.physics.arcade.collide(stars, platforms);
+	game.physics.arcade.collide(enemyOne, platforms);
 }
-
-//new comment to test git commit
