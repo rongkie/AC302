@@ -72,7 +72,7 @@ function create(){
 	enemyOne.animations.add('left', [0,1], 10, true);
 	enemyOne.animations.add('right', [2,3], 10, true);
 	// enable physics
-	enemyOne.physics.arcade.enable(enemyOne);
+	game.physics.arcade.enable(enemyOne);
 	enemyOne.body.bounce.y = 0.2;
 	enemyOne.body.gravity.y = 500;
 
