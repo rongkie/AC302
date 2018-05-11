@@ -46,23 +46,34 @@ function create(){
 	lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 	lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 
-	//Lesson 8
+	// Lesson 8
 
-	//Creating the player sprite
-	//starting coordinates x, ys
+	// Creating the player sprite
+	// starting coordinates x, ys
 	// game.add.sprite(x, y, image asset key)
 	player = game.add.sprite(32, 400, 'dude');
-	//animations for moving the player left and right
+	// animations for moving the player left and right
 	// animations.add(name of animation, [frames for animation], frames per sec, loop)
 	player.animations.add('left', [0, 1, 2, 3], 10, true);
 	player.animations.add('right', [5, 6, 7, 8], 10, true);
-	//enable physics
+	// enable physics
 	game.physics.arcade.enable(player);
-	//now that physics is enabled, add, verticle bounce, vertical gravity and bounded within the screen
+	// now that physics is enabled, add, verticle bounce, vertical gravity and bounded within the screen
 	// only y as we focus on vertical movement
 	player.body.bounce.y = 0.2;
 	player.body.gravity.y = 300;
 	player.body.collideWorldBounds = true;
+
+	// Create enemy sprite
+	// add sprite
+	enemyOne = game.add.sprite(760, 20, 'baddie');
+	// add the animations (frames of animations start from 0)
+	enemyOne.animations.add('left', [0,1], 10, true);
+	enemyOne.animations.add('right', [2,3], 10, true);
+	// enable physics
+	enemyOne.physics.arcade.enable(enemyOne);
+	enemyOne.body.bounce.y = 0.2;
+	enemyOne.body.gravity.y = 500;
 
 }
 
