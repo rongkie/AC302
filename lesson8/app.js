@@ -62,6 +62,7 @@ function create(){
 	// only y as we focus on vertical movement
 	player.body.bounce.y = 0.2;
 	player.body.gravity.y = 300;
+	// this allows the player to collide with other sprites
 	player.body.collideWorldBounds = true;
 
 	// Create enemy sprite
@@ -75,6 +76,15 @@ function create(){
 	enemyOne.body.bounce.y = 0.2;
 	enemyOne.body.gravity.y = 500;
 
+	// Create starts
+	stars = game.add.physicsGroup();
+	// enables interactions with other objects (e.g. player)
+	stars.enableBody = true;
+	// We shall create 12 stars evenly spaced
+	for(var i = 0; i < 12; i++) {
+		star.body.gravity.y = 200;
+		star.body.bounce.y = 0.7 + Math.random() * 0.2;
+	}
 }
 
 function update(){
