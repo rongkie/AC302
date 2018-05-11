@@ -21,11 +21,14 @@ function create(){
 	platforms.enableBody = true;
 	// Create the ground
 	var ground = platforms.create(0, 550, 'ground');
+	//scales the platform width x2 and height x2
 	ground.scale.setTo(2, 2);
 	ground.body.immovable = true;
 	// Create the ledges
 	var ledge = platforms.create(400, 400, 'ground');
 	ledge.body.immovable = true;
+	// width of the ledge will be smaller.
+	// image in assets is 400 pixels wide (width)
 	ledge = platforms.create(-100, 250, 'ground');
 	ledge.body.immovable = true;
 
@@ -42,6 +45,25 @@ function create(){
 	lifetext = game.add.text(120,5, life,style);
 	lifelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 	lifetext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
+
+	//Lesson 8
+
+	//Creating the player sprite
+	//starting coordinates x, ys
+	// game.add.sprite(x, y, image asset key)
+	player = game.add.sprite(32, 400, 'dude');
+	//animations for moving the player left and right
+	// animations.add(name of animation, [frames for animation], frames per sec, loop)
+	player.animations.add('left', [0, 1, 2, 3], 10, true);
+	player.animations.add('right', [5, 6, 7, 8], 10, true);
+	//enable physics
+	game.physics.arcade.enable(player);
+	//now that physics is enabled, add, verticle bounce, vertical gravity and bounded within the screen
+	// only y as we focus on vertical movement
+	player.body.bounce.y = 0.2;
+	player.body.gravity.y = 300;
+	player.body.collideWorldBounds = true;
+
 }
 
 function update(){
