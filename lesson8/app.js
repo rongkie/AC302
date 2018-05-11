@@ -117,6 +117,12 @@ function update(){
 		// default frame
 		player.frame = 4;
 	}
+
+	// allow the player to jump if touching the ground
+	if(cursors.up.isDown && player.body.touching.down) {
+		// jump up by 300 pixels
+		player.body.velocity.y = -300;
+	}
 }
 
 
