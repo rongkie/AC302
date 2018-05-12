@@ -62,6 +62,18 @@ function create(){
 	// this allows the player to collide with other sprites
 	player.body.collideWorldBounds = true;
 
+	// Create enemy sprite
+	// add sprite
+	enemyOne = game.add.sprite(760, 20, 'baddie');
+	// add the animations (frames of animations start from 0)
+	enemyOne.animations.add('left', [0,1], 10, true);
+	enemyOne.animations.add('right', [2,3], 10, true);
+	// enable physics
+	game.physics.arcade.enable(enemyOne);
+	enemyOne.body.bounce.y = 0.2;
+	enemyOne.body.gravity.y = 500;
+	enemyOne.body.collideWorldBounds = true;
+
 }
 
 function update(){
