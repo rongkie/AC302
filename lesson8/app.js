@@ -111,6 +111,11 @@ function update(){
 	} else {
 		player.animations.stop();
 		player.frame = 4;
+
+		// allow the player to jump if its touching the ground
+		if(cursors.up.isDown && player.body.touching.down) {
+			player.body.velocity.y = -300;
+		}
 	}
 }
 
