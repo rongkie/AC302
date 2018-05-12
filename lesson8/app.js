@@ -48,7 +48,19 @@ function create(){
 
 	// Lesson 8
 
-	
+	// Create the player sprite
+	// starting coordinates x,y
+	player = game.add.sprite(32, 400, 'dude');
+	// animations for moving the player left and right
+	// animations.add(name of animation, [frames for animation], frames per sec, TRUE/FALSE (loop))
+	player.animations.add('left', [0, 1, 2, 3], 10, true);
+	player.animations.add('right', [5, 6, 7, 8], 10, true);
+	game.physics.arcade.enable(player);
+	// now that physics is enabled, add, vertical bounce, vertical gravity and bounded within the screen
+	player.body.bounce.y = 0.2;
+	player.body.gravity.y = 300;
+	// this allows the player to collide with other sprites
+	player.body.collideWorldBounds = true;
 
 }
 
