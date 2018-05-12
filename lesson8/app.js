@@ -86,10 +86,32 @@ function create(){
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
 
+	// Create keyboard entries (movement)
+	cursors = game.input.keyboard.createCursorKeys();
+
 }
 
 function update(){
-	
+
+	game.physics.arcade.collide(player, platforms);
+	game.physics.arcade.collide(stars, platforms);
+	game.physics.arcade.collide(enemyOne, platforms);
+
+	// reset the player's velocity if no events occur
+	player.body.velocity.x = 0;
+
+	// program the movement keys
+	if(cursors.left.isDown) {
+		// move left
+		player.body.velocity.x = -150;
+		player.animations.play('left');
+	} else if(cursors.right.isDown) {
+		player.body.velocity.x = 150;
+		player.animations.play('right');
+	} else {
+		player.animations.stop();
+		player.frame = 4;
+	}
 }
 
 
